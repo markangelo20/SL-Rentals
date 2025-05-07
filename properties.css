@@ -240,5 +240,24 @@ body {
   .not-available {
     color: red;
   }
+  /* Responsive Search Bar */
+#searchInput {
+  width: 100%;
+  max-width: 300px;
+  margin: 0 auto 20px auto;
+  display: block;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+@media (max-width: 768px) {
+  .search-wrapper {
+    justify-content: center !important;
+    margin-top: 20px !important;
+  }
+}
+
+
   
  
