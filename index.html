@@ -1,0 +1,375 @@
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+        <link rel="stylesheet" href="style.css">
+        <link rel="icon" type="image/x-icon" href="sl/sl.png">
+        <title>SL Rentals</title>
+    </head>
+    <body>
+
+      <section  id="login-section">
+      <div id="login-section" class="bb">
+        <div class="cc">
+          <img src="sl/pic1.png" alt="Login Illustration">
+        </div>
+        <div class="dd">
+          <h2>Log In</h2>
+          <form id="loginForm">
+            <div class="ee">
+              <i class="fas fa-envelope"></i>
+              <input type="email" id="email" placeholder="Email" required>
+            </div>
+            <div class="ee">
+              <i class="fas fa-lock"></i>
+              <input type="password" id="password" placeholder="Password" required>
+              <i class="fas fa-eye" id="togglePassword" style="cursor: pointer;"></i>
+            </div>
+            <button type="submit" class="ff" onclick="goHome(event)">Login</button>
+          </form>
+          <div class="gg">
+            <a href="#" id="forgotPassword">Forgot Password?</a>
+            <a href="#" id="createAccount">Create an account?</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="register-section" style="display: none;">
+      <div class="bb">
+        <div class="cc">
+          <img src="sl/pic1.png" alt="Register Illustration">
+        </div>
+        <div class="dd">
+          <h2>Create Account</h2>
+          <form id="registerForm" onsubmit="registerUser(event)">
+            <div class="ee">
+              <i class="fas fa-user"></i>
+              <input type="text" id="fullName" placeholder="Full Name" required>
+            </div>
+            <div class="ee">
+              <i class="fas fa-envelope"></i>
+              <input type="email" id="regEmail" placeholder="Email" required>
+            </div>
+            <div class="ee">
+              <i class="fas fa-lock"></i>
+              <input type="password" id="regPassword" placeholder="Password" required>
+              <i class="fas fa-eye toggle-eye" data-target="regPassword" style="cursor: pointer;"></i>
+            </div>
+            <div class="ee">
+              <i class="fas fa-lock"></i>
+              <input type="password" id="confirmPassword" placeholder="Confirm Password" required>
+              <i class="fas fa-eye toggle-eye" data-target="confirmPassword" style="cursor: pointer;"></i>
+            </div>
+            <button type="submit" class="ff">Register</button>
+          </form>
+          <div class="gg">
+            <a href="#" id="backToLogin">Already have an account? Log in</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+      <header id="header" class="home">
+        <div class="left">
+          <div class="logo">
+            <img src="sl/sl.png" alt="sl LOGO">
+            <div class="brand">
+              <span class="green">SL</span>
+              <span>RENTALS</span>
+            </div>
+          </div>
+          <nav class="navsl">
+            <a href="#" onclick="goHomeP()">HOME</a>
+            <a href="properties.html">PROPERTIES</a>
+            <a href="demo.html">DEMOS</a>
+            <a href="about-us.html">ABOUT US</a>
+            <a href="our-team.html">TEAM</a>
+          </nav>
+        </div>
+        <div class="book-buttons">
+          <div class="book" onclick="window.location.href='booking.html'">
+            <i class="fas fa-phone"></i> BOOK
+          </div>          
+          <div class="user-menu">
+            <div class="user-icon" onclick="toggleMenu()">
+              <i class="fas fa-user-circle fa-2x"></i>
+            </div>
+            <div class="dropdown-menu" id="userDropdown" style="display: none;">
+              <p id="accountInfo"></p>
+              <a href="#" onclick="viewAccount()">View Account</a>
+              <a href="#" onclick="logout()">Logout</a>
+            </div>
+          </div>
+          
+      </header>
+
+      <!-- Hero Section -->
+      <section id="hero" class="hero">
+        <div class="welcome-text">
+          <h2>Welcome to <br><span>SL RENTALS</span></h2>
+          <p>At SL Rentals, we make renting easy, and hassle-free.<br>
+            Whether you're looking for vacation homes, event spaces,<br>
+            specialized equipment, we've got you covered. Our<br>mitment to excellence ensures that you get top-tier<br>vice, well-maintained rentals, and flexible terms that<br>t your needs.
+          </p>
+          <a href="#">View more</a>
+        </div>
+
+        <div class="reservation">
+          <h3>Make a Reservation</h3>
+          <div class="input-box">
+            <i class="fa fa-map-marker-alt"></i>
+            <input type="text" id="propertyName" placeholder="Property Name" readonly />
+          </div>
+          <div class="input-box">
+            <i class="fa fa-calendar-alt"></i>
+            <input type="date" id="checkOut"  placeholder="Check in Date" required />
+          </div>
+          <div class="input-box">
+            <i class="fa fa-clock"></i>
+            <input type="time" id="checkInTime" placeholder="Check in Time" />
+          </div>
+          <div class="input-box">
+            <i class="fa fa-hourglass-half"></i>
+            <input type="number" id="duration" min="1" placeholder="How many days?" required />
+          </div>
+          <div class="input-box">
+            <i class="fa fa-users"></i>
+            <select id="guests" required>
+              <option value="">Guest</option>
+              <option>1 Guest</option>
+              <option>2 Guests</option>
+              <option>3 Guests</option>
+            </select>
+          </div>
+          <button class="search-btn" onclick="submitReservation()">Submit</button>
+        </div>        
+      </section>
+
+      <footer id="footer">
+        <div class="footer-content">
+          <div class="footer-links">
+            <h4>Quick Links</h4>
+            <ul>
+              <li><a href="#">Home</a></li>
+              <li><a href="properties.html">Properties</a></li>
+              <li><a href="#">Demos</a></li>
+              <li><a href="#">About Us</a></li>
+              <li><a href="our-team.html">Our Team</a></li>
+            </ul>
+          </div>
+    
+          <div class="footer-info">
+            <h4>Contact Us</h4>
+            <ul>
+              <li><i class="fas fa-phone"></i> +1 234 567 890</li>
+              <li><i class="fas fa-envelope"></i> info@slrentals.com</li>
+              <li><i class="fas fa-map-marker-alt"></i> 123 Rental St, Cityville</li>
+            </ul>
+          </div>
+    
+          <div class="footer-social">
+            <h4>Follow Us</h4>
+            <ul>
+              <li><a href="#"><i class="fab fa-facebook-f"></i> Facebook</a></li>
+              <li><a href="#"><i class="fab fa-twitter"></i> Twitter</a></li>
+              <li><a href="#"><i class="fab fa-instagram"></i> Instagram</a></li>
+            </ul>
+          </div>
+        </div>
+    
+        <div class="footer-bottom">
+          <p>&copy; 2025 SL Rentals. All Rights Reserved.</p>
+        </div>
+      </footer>
+      
+    </body>
+    <script>
+      // Toggle password visibility
+      const togglePassword = document.getElementById("togglePassword");
+      const passwordField = document.getElementById("password");
+
+      togglePassword.addEventListener("click", function () {
+        const type = passwordField.type === "password" ? "text" : "password";
+        passwordField.type = type;
+        this.classList.toggle("fa-eye-slash");
+      });
+
+      // Check if user is already logged in
+      window.onload = function () {
+        if (localStorage.getItem("isLoggedIn") === "true") {
+          showHome();
+        }
+      };
+
+      // Login function
+      function goHome(event) {
+      event.preventDefault(); 
+      const email = document.getElementById('email').value;
+      const password = document.getElementById('password').value;
+
+      const savedUser = JSON.parse(localStorage.getItem(email));
+
+      if (savedUser && savedUser.password === password) {
+        localStorage.setItem("isLoggedIn", "true");
+        localStorage.setItem("currentUser", email);
+        showHome();
+      } else {
+        alert("Invalid login credentials");
+      }
+    }
+
+
+      // Show home content
+      function showHome() {
+        document.getElementById('login-section').style.display = "none";
+        document.getElementById('hero').style.display = "flex";
+        document.getElementById('header').style.display = "flex";
+      }
+
+      // Home nav click (e.g., from another page or back)
+      function goHomeP() {
+        if (localStorage.getItem("isLoggedIn") === "true") {
+          showHome();
+        } else {
+          document.getElementById('login-section').style.display = "block";
+          document.getElementById('hero').style.display = "none";
+          document.getElementById('header').style.display = "none";
+        }
+      }
+
+      // Logout
+      function logout() {
+  const confirmLogout = confirm("Are you sure you want to log out?");
+  if (confirmLogout) {
+    localStorage.removeItem("isLoggedIn");
+    localStorage.removeItem("currentUser");
+    location.reload(); // Refresh page to return to login
+  }
+}
+
+
+      // Show Create Account Form
+    document.getElementById("createAccount").addEventListener("click", function (e) {
+      e.preventDefault();
+      document.getElementById("login-section").style.display = "none";
+      document.getElementById("register-section").style.display = "block";
+    });
+
+    // Back to Login
+    document.getElementById("backToLogin").addEventListener("click", function (e) {
+      e.preventDefault();
+      document.getElementById("register-section").style.display = "none";
+      document.getElementById("login-section").style.display = "block";
+    });
+    function registerUser(event) {
+      event.preventDefault();
+
+      const fullName = document.getElementById("fullName").value;
+      const email = document.getElementById("regEmail").value;
+      const password = document.getElementById("regPassword").value;
+      const confirmPassword = document.getElementById("confirmPassword").value;
+
+      if (password !== confirmPassword) {
+        alert("Passwords do not match!");
+        return;
+      }
+
+      // Check if user already exists
+      if (localStorage.getItem(email)) {
+        alert("Account with this email already exists!");
+        return;
+      }
+
+      // Save user data
+      const user = {
+        fullName: fullName,
+        email: email,
+        password: password
+      };
+
+      localStorage.setItem(email, JSON.stringify(user));
+      alert("Account created successfully! Please log in.");
+
+      // Go back to login
+      document.getElementById("register-section").style.display = "none";
+      document.getElementById("login-section").style.display = "block";
+    }
+
+    function submitReservation() {
+  const propertyInput = document.getElementById("propertyName");
+  const checkInInput = document.getElementById("checkOut");
+  const timeInput = document.getElementById("checkInTime");
+  const durationInput = document.getElementById("duration");
+  const guestsInput = document.getElementById("guests");
+
+  const propertyName = propertyInput.value;
+  const checkInDate = checkInInput.value;
+  const checkInTime = timeInput.value;
+  const duration = durationInput.value;
+  const guests = guestsInput.value;
+
+  if (propertyName && checkInDate && checkInTime && duration && guests) {
+    alert(`Reservation for "${propertyName}" has been submitted!\nCheck-in: ${checkInDate} at ${checkInTime}\nDuration: ${duration} days\nGuests: ${guests}`);
+
+    // ✅ Reset values  
+    propertyInput.value = "";
+    checkInInput.value = "";
+    timeInput.value = "";
+    durationInput.value = "";
+    guestsInput.value = "";
+    
+  } else {
+    alert("Please fill out all required fields.");
+  }
+}
+
+
+
+
+function toggleMenu() {
+  const menu = document.getElementById("userDropdown");
+  const email = localStorage.getItem("currentUser");
+
+  if (menu.style.display === "none") {
+    menu.style.display = "block";
+    document.getElementById("accountInfo").textContent = "Logged in as: " + email;
+  } else {
+    menu.style.display = "none";
+  }
+}
+
+function viewAccount() {
+  alert("You are logged in as: " + localStorage.getItem("currentUser"));
+}
+function reserveProperty(propertyName) {
+  if (confirm(`Do you want to reserve "${propertyName}"?`)) {
+    localStorage.setItem('selectedProperty', propertyName);  // 👉 Save the selected property
+    window.location.href = 'index.html';  // 👉 Go to home page
+  }
+}
+document.addEventListener('DOMContentLoaded', function () {
+  const selectedProperty = localStorage.getItem('selectedProperty');
+  if (selectedProperty) {
+    const propertyInput = document.getElementById('propertyName');
+    if (propertyInput) {
+      propertyInput.value = selectedProperty;
+
+      // 👇 Ito ang kulang
+      document.getElementById('hero').style.display = 'flex';      // Show reservation
+      document.getElementById('header').style.display = 'flex';    // Show header
+      document.getElementById('login-section').style.display = 'none'; // Hide login
+    }
+    localStorage.removeItem('selectedProperty');
+  }
+});
+
+
+
+    </script>
+
+    </html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="icon" href="sl/sl.png" type="image/x-icon">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link rel="stylesheet" href="about-us.css">
+  <title>SL Rentals</title>
+</head>
+<body>
+  <header class="home">
+    <div class="left">
+      <div class="logo">
+        <img src="sl/sl.png" alt="sl LOGO">
+        <div class="brand">
+          <span class="green">SL</span>
+          <span>RENTALS</span>
+        </div>
+      </div>
+      <nav class="navsl">
+        <a href="index.html">HOME</a>
+        <a href="properties.html">PROPERTIES</a>
+        <a href="demo.html">DEMOS</a>
+        <a href="about-us.html">ABOUT US</a>
+        <a href="our-team.html">TEAM</a>
+      </nav>
+    </div>
+    <div class="book-buttons">
+      <div class="book" onclick="window.location.href='booking.html'">
+        <i class="fas fa-phone"></i> BOOK
+      </div>          
+    </div>
+  </header>
+
+  <section class="about">
+    <div class="about-wrapper">
+      <div class="about-text">
+        <h1>About SL Rentals</h1>
+        <p>
+          At SL Rentals, we specialize in providing quality rental properties to fit every lifestyle and budget. 
+          Our mission is to simplify the rental process for both tenants and property owners through professional services, honest communication, and a seamless experience.
+        </p>
+        <p>
+          Founded by a team of passionate individuals, we are committed to making renting easier, safer, and more reliable. Whether you're looking for your next home or need a trusted partner to manage your property, SL Rentals is here to help.
+        </p>
+  
+        <div class="mission-values">
+          <h2>Our Mission</h2>
+          <p>To be the most trusted and reliable rental service provider in the area by prioritizing customer satisfaction and transparency.</p>
+  
+          <h2>Our Values</h2>
+          <ul>
+            <li><i class="fas fa-check-circle"></i> Transparency & Integrity</li>
+            <li><i class="fas fa-users"></i> Customer-Centered Service</li>
+            <li><i class="fas fa-building"></i> Quality Property Standards</li>
+            <li><i class="fas fa-handshake"></i> Long-Term Relationships</li>
+          </ul>
+        </div>
+  
+        <button class="message-btn" onclick="toggleMessageBox()">📩 Message Us</button>
+        <div class="message-box" id="messageBox">
+          <textarea placeholder="Write your message here..."></textarea>
+          <button class="send-btn" onclick="sendMessage()">Send</button>
+        </div>
+      </div>
+  
+      <div class="about-image">
+        <img src="sl/about-image.jpg" alt="About SL Rentals">
+      </div>
+    </div>
+  </section>
+  
+
+  <footer>
+    <p>&copy; 2025 SL Rentals. All rights reserved.</p>
+  </footer>
+
+  <script>
+    function goBook() {
+      window.location.href = "contact.html";
+    }
+  function toggleMessageBox() {
+    const box = document.getElementById('messageBox');
+    box.style.display = box.style.display === 'flex' ? 'none' : 'flex';
+  }
+
+  function sendMessage() {
+    const textarea = document.querySelector('#messageBox textarea');
+    if (textarea.value.trim() === "") {
+      alert("Please enter a message before sending.");
+    } else {
+      alert("Message sent! We'll get back to you soon.");
+      textarea.value = "";
+      document.getElementById('messageBox').style.display = 'none';
+    }
+  }
+
+  </script>
+</body>
+</html>

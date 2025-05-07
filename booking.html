@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="booking.css" />
+  <title>SL Rentals</title>
+  <link rel="icon" type="image/x-icon" href="sl/sl.png">
+</head>
+<body>
+  <div class="booking-container">
+    <div class="booking-info">
+      <h3>Booking Details</h3>
+      <form id="bookingForm">
+        <input type="text" id="name" name="name" placeholder="Full Name" required />
+        <input type="email" id="email" name="email" placeholder="Email Address" required />
+        <input type="date" id="date" name="date" required />
+        <select id="propertyType" required>
+          <option value="">Select Property Type</option>
+          <option value="apartment">Apartment</option>
+          <option value="house">House</option>
+          <option value="resort">Resort</option>
+        </select>
+        
+        <select id="stayDuration" required>
+          <option value="">Select Duration</option>
+          <option value="daily">1-6 Days</option>
+          <option value="weekly">1 Week</option>
+          <option value="monthly">1 Month</option>
+        </select>
+        
+        <p id="priceDisplay" style="color:white; font-weight:bold; margin-top:10px;"></p>        
+        <div class="booking-actions">
+          <button type="submit">Confirm Booking</button>
+          <button type="button" onclick="cancelBooking()">Cancel Booking</button>
+        </div>
+      </form>
+      <div id="confirmationMessage" style="display: none; margin-top: 20px; color: white; font-weight: bold;"></div>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById("bookingForm").addEventListener("submit", function(event) {
+      event.preventDefault(); // Stop form from submitting
+  
+      // Get values
+      const name = document.getElementById("name").value;
+      const email = document.getElementById("email").value;
+      const date = document.getElementById("date").value;
+  
+      // Create message
+      const message = `Thank you, ${name}! Your booking for ${date} has been confirmed. A confirmation email has been sent to ${email}.`;
+  
+      // Show message
+      document.getElementById("bookingForm").style.display = "none";
+      const messageDiv = document.getElementById("confirmationMessage");
+      messageDiv.innerText = message;
+      messageDiv.style.display = "block";
+  
+      // ✅ Create and append the "Go Back" button
+      const backButton = document.createElement("button");
+      backButton.innerText = "Go Back";
+      backButton.style.marginTop = "20px";
+      backButton.style.padding = "12px 24px";
+      backButton.style.borderRadius = "25px";
+      backButton.style.border = "none";
+      backButton.style.backgroundColor = "#ffffff";
+      backButton.style.color = "#000000";
+      backButton.style.fontWeight = "bold";
+      backButton.style.cursor = "pointer";
+      backButton.onclick = function () {
+        window.location.href = "properties.html"; // Adjust this as needed
+      };
+  
+      // ✅ Append the button to the message container
+      messageDiv.appendChild(document.createElement("br"));
+      messageDiv.appendChild(backButton);
+    });
+  
+    function cancelBooking() {
+      const confirmCancel = confirm("Are you sure you want to cancel the booking?");
+      if (confirmCancel) {
+        window.location.href = "properties.html";
+      }
+    }
+
+    const priceDisplay = document.getElementById("priceDisplay");
+const propertyTypeSelect = document.getElementById("propertyType");
+const stayDurationSelect = document.getElementById("stayDuration");
+
+// Presyo base sa type at duration
+const prices = {
+  apartment: { daily: 600, weekly: 2500, monthly: 7000 },
+  house: { daily: 700, weekly: 3500, monthly: 10000 },
+  resort: { daily: 1000, weekly: 6500, monthly: "Resorts are not available for monthly stays." }
+};
+
+// Kapag pinili ang type at duration
+propertyTypeSelect.addEventListener("change", updatePrice);
+stayDurationSelect.addEventListener("change", updatePrice);
+
+function updatePrice() {
+  const type = propertyTypeSelect.value;
+  const duration = stayDurationSelect.value;
+
+  if (type && duration) {
+    const price = prices[type][duration];
+
+    // Kung resort at monthly, ipakita lang ang message
+    if (type === "resort" && duration === "monthly") {
+      priceDisplay.textContent = price;
+    } else {
+      priceDisplay.textContent = `₱${price.toLocaleString()} - ${duration.toUpperCase()} Rate`;
+    }
+  } else {
+    priceDisplay.textContent = "";
+  }
+}
+
+
+  </script>
+  
+</body>
+</html>

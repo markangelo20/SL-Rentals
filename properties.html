@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="properties.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <title>SL Rentals</title>
+  <link rel="icon" type="image/x-icon" href="sl/sl.png">
+</head>
+<body>
+
+    <header class="home">
+        <div class="left">
+          <div class="logo">
+            <img src="sl/sl.png" alt="sl LOGO">
+            <div class="brand">
+              <span class="green">SL</span>
+              <span>RENTALS</span>
+            </div>
+          </div>
+      
+          <nav class="navsl">
+            <a href="index.html">HOME</a>
+            <a href="properties.html">PROPERTIES</a>
+            <a href="demo.html">DEMOS</a>
+            <a href="about-us.html">ABOUT</a>
+            <a href="our-team.html">TEAM</a>
+          </nav>
+        </div>
+        <div class="book" onclick="window.location.href='booking.html'">
+          <i class="fas fa-phone"></i> BOOK
+        </div>          
+      </header>
+
+    <h2 class="title">Our Featured Homes</h2>
+    <p class="subtitle">Hand picked quality selection places</p>
+
+    <div style="display: flex; justify-content: flex-end; padding: 0 20px; margin-top: -40px; margin-bottom: 20px;">
+      <input type="text" id="searchInput" placeholder="Search Barangay..." style="padding: 8px; border-radius: 5px; border: 1px solid #ccc; width: 250px;">
+    </div>
+
+    <div class="container">
+      <!-- Featured Home 1 -->
+      <div class="card featured">
+        <img src="sl/image 1.jpg" alt="Apartment 1">
+        <div class="card-content">
+          <h3>2-Storey Apartment/House</h3>
+          <p>Tierracon Homes Diversion San Leonardo</p>
+          <div class="info">
+            <div class="tag">🛏 4 Bed Rooms</div>
+            <div class="tag">🛁 2 Baths</div>
+            <div class="tag">👥 7 Guests</div>
+          </div>
+          <p class="tag">Apartment or House</p>
+          <div class="rating">
+            <div class="stars">★★★☆☆</div>
+            <span>Average</span>
+          </div>
+          <p class="availability available">Available</p>
+            <div class="card-buttons">
+              <button class="book-btn" onclick="window.location.href='booking.html'">Book</button>
+              <button class="reserve-btn" onclick="reserveProperty('2-Storey Apartment/House')">Reservation</button>
+            </div>
+          </div>
+        </div>
+     
+    
+      <!-- Featured Home 2 -->
+      <div class="card featured">
+        <img src="sl/image 2.jpg" alt="Apartment 2">
+        <div class="card-content">
+          <h3>Second Floor Living</h3>
+          <p>Tierracon Homes Diversion San Leonardo</p>
+          <div class="info">
+            <div class="tag">🛏 2 Bed Rooms</div>
+            <div class="tag">🛁 2 Baths</div>
+            <div class="tag">👥 4 Guests</div>
+          </div>
+          <p class="tag">Apartment or House</p>
+          <div class="rating">
+            <div class="stars">★★★☆☆</div>
+            <span>Average</span>
+          </div>
+          <p class="availability available">Available</p>
+          <div class="card-buttons">
+            <button class="book-btn" onclick="window.location.href='booking.html'">Book</button>
+            <button class="reserve-btn" onclick="reserveProperty('Second Floor Living')">Reservation</button>
+          </div>
+        </div>
+      </div>
+    
+      <!-- Featured Home 3 -->
+      <div class="card featured">
+        <img src="sl/image 3.jpg" alt="Apartment 3">
+        <div class="card-content">
+          <h3>Single-Level Home</h3>
+          <p>Tierracon Homes Diversion San Leonardo</p>
+          <div class="info">
+            <div class="tag">🛏 2 Bed Rooms</div>
+            <div class="tag">🛁 1 Bath</div>
+            <div class="tag">👥 4 Guests</div>
+          </div>
+          <p class="tag">Apartment</p>
+          <div class="rating">
+            <div class="stars">★★★☆☆</div>
+            <span>Average</span>
+          </div>
+          <p class="availability available">Available</p>
+          <div class="card-buttons">
+            <button class="book-btn" onclick="window.location.href='booking.html'">Book</button>
+            <button class="reserve-btn" onclick="reserveProperty('Single-Level Home')">Reservation</button>
+          </div>
+        </div>
+      </div>
+    
+      <!-- Featured Home 4 -->
+      <div class="card featured">
+        <img src="sl/image 4.jpg" alt="Apartment 4">
+        <div class="card-content">
+          <h3>2-Storey Residential Home</h3>
+          <p>Brgy, Mallorca San Leonardo Nueva Ecija</p>
+          <div class="info">
+            <div class="tag">🛏 5 Bed Rooms</div>
+            <div class="tag">🛁 3 Baths</div>
+            <div class="tag">👥 10 Guests</div>
+          </div>
+          <p class="tag">House</p>
+          <div class="rating">
+            <div class="stars">★★★☆☆</div>
+            <span>Average</span>
+          </div>
+          <p class="availability available">Available</p>
+          <div class="card-buttons">
+            <button class="book-btn" onclick="window.location.href='booking.html'">Book</button>
+            <button class="reserve-btn" onclick="reserveProperty('2-Storey Residential Home')">Reservation</button>
+          </div>
+        </div>
+      </div>
+    
+      <!-- Featured Home 6 (Cozy Garden) -->
+      <div class="card featured" id="cozy-home">
+        <img src="sl/m1.jpg" alt="Apartment 6">
+        <div class="card-content">
+          <h3>Commercial/Apartment</h3>
+          <p>Brgy, Mambangnan San Leonardo Nueva Ecija</p>
+          <div class="info">
+            <div class="tag">🛏 2 Bed Rooms</div>
+            <div class="tag">🛁 2 Baths</div>
+            <div class="tag">👥 10 Guests</div>
+          </div>
+          <p class="tag">House</p>
+          <div class="rating">
+            <div class="stars">★★★★☆</div>
+            <span>Good</span>
+          </div>
+          <p class="availability available">Available</p>
+          <div class="card-buttons">
+            <button class="book-btn" onclick="window.location.href='booking.html'">Book</button>
+            <button class="reserve-btn" onclick="reserveProperty('Modern Apartment with Balcony')">Reservation</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="card featured" id="m3">
+        <img src="sl/m2.jpg" alt="Apartment 10">
+        <div class="card-content">
+          <h3>Apartment/House</h3>
+          <p>Brgy, Mambangnan San Leonardo Nueva Ecija</p>
+          <div class="info">
+            <div class="tag">🛏 2 Bed Rooms</div>
+            <div class="tag">🛁 1 Bath</div>
+            <div class="tag">👥 8 Guests</div>
+          </div>
+          <p class="tag">House</p>
+          <div class="rating">
+            <div class="stars">★★★★☆</div>
+            <span>Good</span>
+          </div>
+          <p class="availability available">Available</p>
+          <div class="card-buttons">
+            <button class="book-btn" onclick="window.location.href='booking.html'">Book</button>
+            <button class="reserve-btn" onclick="reserveProperty('Apartment/House')">Reservation</button>
+          </div>
+        </div>
+      </div>
+    
+      <!-- Featured Home 7 (Luxury Villa) -->
+      <div class="card featured" id="luxury-villa">
+        <img src="sl/mag1.jpg" alt="Apartment 7">
+        <div class="card-content">
+          <h3>Caminos Private Resort and Event Place</h3>
+          <p>Brgy, Magpapalayok San Leonardo Nueva Ecija</p>
+          <div class="info">
+            <div class="tag">🛏 10 Bed Rooms</div>
+            <div class="tag">🛁 7 Baths</div>
+            <div class="tag">👥 50 Guests</div>
+          </div>
+          <p class="tag">Resort/Commercial</p>
+          <div class="rating">
+            <div class="stars">★★★★★</div>
+            <span>Excellent</span>
+          </div>
+          <p class="availability available">Available</p>
+          <div class="card-buttons">
+            <button class="book-btn" onclick="window.location.href='booking.html'">Book</button>
+            <button class="reserve-btn" onclick="reserveProperty('Caminos Private Resort and Event Place')">Reservation</button>
+          </div>
+        </div>
+      </div>
+    
+      <!-- Featured Home 8 -->
+      <div class="card featured" id="family">
+        <img src="sl/m3.jpg" alt="Apartment 8">
+        <div class="card-content">
+          <h3>Nipahut Resort</h3>
+          <p>Brgy, Mambangnan San Leonardo Nueva Ecija</p>
+          <div class="info">
+            <div class="tag">🛏 15 Bed Rooms</div>
+            <div class="tag">🛁 10 Bath</div>
+            <div class="tag">👥 50 Guests</div>
+          </div>
+          <p class="tag">Resort/Commercial</p>
+          <div class="rating">
+            <div class="stars">★★★☆☆</div>
+            <span>Average</span>
+          </div>
+          <p class="availability available">Available</p>
+          <div class="card-buttons">
+            <button class="book-btn" onclick="window.location.href='booking.html'">Book</button>
+            <button class="reserve-btn" onclick="reserveProperty('Modern Apartment with Balcony')">Reservation</button>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="card featured" id="c1">
+        <img src="sl/c1.jpg" alt="Apartment 11">
+        <div class="card-content">
+          <h3>Single Occupancy Apartment</h3>
+          <p>Brgy, Castellano San Leonardo Nueva Ecija</p>
+          <div class="info">
+            <div class="tag">🛏 1 Bed Rooms</div>
+            <div class="tag">🛁 1 Bath</div>
+            <div class="tag">👥 2 Guests</div>
+          </div>
+          <p class="tag">Apartment</p>
+          <div class="rating">
+            <div class="stars">★★★☆☆</div>
+            <span>Average</span>
+          </div>
+          <p class="availability available">Available</p>
+          <div class="card-buttons">
+            <button class="book-btn" onclick="window.location.href='booking.html'">Book</button>
+            <button class="reserve-btn" onclick="reserveProperty('Modern Apartment with Balcony')">Reservation</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="card featured" id="n1">
+        <img src="sl/n1.jpg" alt="Apartment 12">
+        <div class="card-content">
+          <h3>Elevated Living Space</h3>
+          <p>Brgy, Nieves San Leonardo Nueva Ecija</p>
+          <div class="info">
+            <div class="tag">🛏 2 Bed Rooms</div>
+            <div class="tag">🛁 2 Bath</div>
+            <div class="tag">👥 5 Guests</div>
+          </div>
+          <p class="tag">House</p>
+          <div class="rating">
+            <div class="stars">★★★☆☆</div>
+            <span>Average</span>
+          </div>
+          <p class="availability available">Available</p>
+          <div class="card-buttons">
+            <button class="book-btn" onclick="window.location.href='booking.html'">Book</button>
+            <button class="reserve-btn" onclick="reserveProperty('Modern Apartment with Balcony')">Reservation</button>
+          </div>
+        </div>
+      </div>
+    
+      <!-- Featured Home 9 -->
+      <div class="card featured" id="Studio">
+        <img src="sl/tab1.jpg" alt="Apartment 9">
+        <div class="card-content">
+          <h3></h3>
+          <p>Brgy, Tabuating San Leonardo Nueva Ecija</p>
+          <div class="info">
+            <div class="tag">🛏 1 Bed Room</div>
+            <div class="tag">🛁 1 Bath</div>
+            <div class="tag">👥 2 Guests</div>
+          </div>
+          <p class="tag">Studio</p>
+          <div class="rating">
+            <div class="stars">★★☆☆☆</div>
+            <span>Basic</span>
+          </div>
+          <p class="availability available">Available</p>
+          <div class="card-buttons">
+            <button class="book-btn" onclick="window.location.href='booking.html'">Book</button>
+            <button class="reserve-btn" onclick="reserveProperty('Luxury Villa')">Reserve</button>
+          </div>
+        </div>
+      </div>
+      <p id="noResults" style="display: none; text-align: center; font-size: 18px; color: #333; margin-top: 20px;">
+        No available apartments in this barangay.
+      </p>
+      
+      
+    </div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  const searchInput = document.getElementById("searchInput");
+  const allCards = document.querySelectorAll(".card");
+
+  // Hide some properties by default
+  const hiddenCards = ['cozy-home', 'luxury-villa', 'family', 'Studio','m3','c1','n1'];
+  hiddenCards.forEach(id => {
+    document.getElementById(id).style.display = "none";
+  });
+
+  searchInput.addEventListener("input", function() {
+    const keyword = this.value.trim().toLowerCase();
+
+    allCards.forEach(card => {
+      const locationText = card.querySelector("p").textContent.toLowerCase();
+
+      if (keyword === "") {
+        // Reset to default: hide cards from hiddenCards list
+        if (hiddenCards.includes(card.id)) {
+          card.style.display = "none";
+        } else {
+          card.style.display = "block";
+        }
+      } else {
+        // Search filter
+        if (locationText.includes(keyword)) {
+          card.style.display = "block";
+        } else {
+          card.style.display = "none";
+        }
+      }
+    });
+    const anyVisible = Array.from(allCards).some(card => card.style.display !== "none");
+  document.getElementById("noResults").style.display = anyVisible ? "none" : "block";
+  });
+
+}); 
+function reserveProperty(propertyName) {
+  const confirmReserve = confirm(`Do you want to reserve "${propertyName}"?`);
+  if (confirmReserve) {
+    localStorage.setItem('selectedProperty', propertyName); // 👉 save sa storage
+    window.location.href = "index.html"; // 👉 punta sa home page kung nasaan ang form
+  }
+}
+
+
+
+
+</script>
+
+</body>
+</html>

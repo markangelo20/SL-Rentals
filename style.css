@@ -1,0 +1,488 @@
+/* ========== Base Styles ========== */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background-image: url(sl/sl2.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* ======= Hero + Reservation ======= */
+.hero {
+  display: flex;
+  justify-content: space-between;
+  padding: 150px 50px 90px;
+  align-items: flex-start;
+}
+
+.welcome-text {
+  max-width: 45%;
+  color: black;
+  margin-left: 160px;
+  margin-top: 80px;
+}
+
+.welcome-text h2 {
+  font-size: 36px;
+  font-weight: bold;
+}
+
+.welcome-text h2 span {
+  display: block;
+  font-size: 40px;
+}
+
+.welcome-text p {
+  margin-top: 15px;
+  line-height: 1.6;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.welcome-text a {
+  display: inline-block;
+  margin-top: 15px;
+  text-decoration: none;
+  color: #2e2e2e;
+  font-weight: bold;
+}
+
+.reservation {
+  background: rgba(255, 255, 255, 0.7);
+  padding: 20px;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 350px;
+  font-family: 'Poppins', sans-serif;
+  margin: 30px 0 0 auto;
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+}
+
+.reservation h3 {
+  background-color: #0c557e;
+  color: white;
+  padding: 15px;
+  font-size: 22px;
+  font-weight: bold;
+  text-align: center;
+  border-radius: 5px 5px 0 0;
+  margin-bottom: 15px;
+}
+
+.input-box {
+  display: flex;
+  align-items: center;
+  background-color: white;
+  padding: 10px 12px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  border: 1px solid #0c557e;
+}
+
+.input-box i {
+  color: #0c557e;
+  margin-right: 10px;
+  font-size: 18px;
+}
+
+.input-box input,
+.input-box select {
+  border: none;
+  outline: none;
+  width: 100%;
+  font-size: 14px;
+  background: transparent;
+  color: #333;
+}
+
+.search-btn {
+  width: 100%;
+  padding: 12px;
+  background-color: #0c557e;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 0 0 5px 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.search-btn:hover {
+  background-color: #333;
+}
+
+/* ======= Login Banner ======= */
+.bb {
+  display: flex;
+  align-items: center;
+  gap: 150px;
+  padding: 15px;
+  justify-content: center;
+  background-color: white;
+  height: 100vh;
+  flex-wrap: wrap;
+}
+
+.cc img {
+  width: 100%;
+  max-width: 450px;
+  height: auto;
+}
+
+.dd {
+  width: 100%;
+  max-width: 450px;
+}
+
+.dd h2 {
+  font-size: 50px;
+  margin-bottom: 20px;
+  color: #000;
+  margin-left: 135px;
+}
+
+.ee {
+  background-color: #eaeaea;
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  padding: 20px 15px;
+  margin-bottom: 20px;
+}
+
+.ee i {
+  font-size: 20px;
+  margin-right: 10px;
+  color: #2e2e2e;
+}
+
+.ee input {
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 16px;
+  flex: 1;
+}
+
+.ff {
+  background-color: #0c557e;
+  color: white;
+  font-size: 20px;
+  padding: 15px;
+  width: 100%;
+  border-radius: 30px;
+  cursor: pointer;
+  margin-bottom: 15px;
+  transition: background-color 0.3s ease;
+}
+
+.ff:hover {
+  background-color: #333;
+}
+
+.gg {
+  text-align: center;
+  font-size: 14px;
+  color: #000;
+}
+
+.gg a {
+  color: #000;
+  display: block;
+  margin-top: 5px;
+}
+
+.gg a:hover {
+  text-decoration: underline;
+}
+
+/* ======= Navbar ======= */
+.home {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 50px;
+  background-color: white;
+  flex-wrap: wrap;
+  display: none; /* if you use it, toggle via JS */
+}
+
+.left {
+  display: flex;
+  align-items: center;
+  gap: 150px;
+  flex-wrap: wrap;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo img {
+  width: 100px;
+  height: auto;
+}
+
+.brand {
+  display: flex;
+  flex-direction: column;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.brand .green {
+  color: #0c557e;
+  font-size: 50px;
+}
+
+.navsl {
+  display: flex;
+  gap: 50px;
+  flex-wrap: wrap;
+}
+
+.navsl a {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+  transition: color 0.3s, transform 0.3s;
+  font-size: 18px;
+}
+
+.navsl a:hover {
+  color: #333;
+  transform: scale(1.1);
+}
+
+.book-buttons {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.book {
+  background-color: #0c557e;
+  color: white;
+  padding: 10px 18px;
+  border-radius: 20px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.book:hover {
+  background-color: #333;
+}
+
+.user-menu {
+  position: relative;
+  display: inline-block;
+}
+
+.user-icon {
+  cursor: pointer;
+  color: #0c557e;
+}
+
+.dropdown-menu {
+  position: absolute;
+  right: 0;
+  top: 40px;
+  background-color: white;
+  border: 1px solid #ccc;
+  padding: 10px;
+  min-width: 150px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  z-index: 10;
+}
+
+.dropdown-menu a {
+  display: block;
+  padding: 5px 0;
+  color: #333;
+  text-decoration: none;
+}
+
+.dropdown-menu a:hover {
+  background-color: #f0f0f0;
+}
+
+#accountInfo {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+#footer {
+  background-color: #0c557e;
+  color: white;
+  padding: 40px 0;
+  font-size: 14px;
+  margin-top: 250px;
+  position: relative;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+}
+
+.footer-links,
+.footer-info,
+.footer-social {
+  margin-bottom: 20px;
+  flex: 1;
+  min-width: 200px;
+}
+
+.footer-links ul,
+.footer-info ul,
+.footer-social ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links h4,
+.footer-info h4,
+.footer-social h4 {
+  margin-bottom: 15px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.footer-links a,
+.footer-info a,
+.footer-social a {
+  color: #bbb;
+  text-decoration: none;
+  display: block;
+  margin: 5px 0;
+}
+
+.footer-links a:hover,
+.footer-info a:hover,
+.footer-social a:hover {
+  color: white;
+}
+
+.footer-social a i {
+  margin-right: 8px;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 20px;
+  border-top: 1px solid #dbd2d2;
+  padding-top: 15px;
+}
+
+.footer-bottom p {
+  font-size: 12px;
+  color: #ffffff;
+}
+
+/* ========== Responsive ========== */
+@media (max-width: 1024px) {
+  .home {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 20px 30px;
+  }
+
+  .left {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+
+  .navsl {
+    gap: 20px;
+  }
+
+  .book {
+    align-self: flex-start;
+    margin-top: 10px;
+  }
+
+  .dd h2 {
+    margin-left: 0;
+    text-align: center;
+  }
+
+  .bb {
+    gap: 50px;
+    padding: 30px 15px;
+  }
+}
+
+@media (max-width: 768px) {
+  /* Navbar/logos */
+  .logo img {
+    width: 80px;
+  }
+  .brand .green {
+    font-size: 35px;
+  }
+  .navsl {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .book {
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* Heading in login box */
+  .dd h2 {
+    font-size: 32px;
+  }
+
+  /* Login banner stacks */
+  .bb {
+    flex-direction: column;
+    height: auto;
+  }
+
+  /* Hero stacks vertically */
+  .hero {
+    flex-direction: column !important;
+    padding: 20px !important;
+    align-items: center !important;
+  }
+
+  /* Welcome text centers */
+  .welcome-text {
+    margin: 0 auto 20px !important;
+    max-width: 100% !important;
+    text-align: center !important;
+  }
+
+  /* Reservation fills width */
+  .reservation {
+    width: 90% !important;
+    max-width: none !important;
+    margin: 20px auto 0 auto !important;
+    position: relative !important;
+    left: auto !important;
+    right: auto !important;
+  }
+
+  /* Footer stacks */
+  .footer-content {
+    flex-direction: column;
+    padding: 0 20px;
+    text-align: center;
+  }
+}

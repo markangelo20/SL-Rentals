@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <title>SL Rentals</title>
+  <link rel="icon" type="image/x-icon" href="sl/sl.png">
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    body {
+      background: #f5f5f5;
+      margin: 0;
+    }
+
+    h2 {
+      text-align: center;
+      font-size: 36px;
+      margin-bottom: 10px;
+      color: #0c557e;
+    }
+
+    .filters {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .filters button {
+      margin: 0 10px;
+      padding: 10px 20px;
+      border: none;
+      background-color: #0c557e;
+      color: white;
+      border-radius: 20px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .filters button:hover {
+      background-color: #063649;
+    }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .card {
+      background: white;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s, box-shadow 0.3s;
+      position: relative;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    .card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .card-content {
+      padding: 15px;
+    }
+
+    .card-content h3 {
+      margin-bottom: 10px;
+      color: #0c557e;
+    }
+
+    .card-content p {
+      font-size: 14px;
+      color: #666;
+    }
+
+    .card[data-type] {
+      display: block;
+    }
+    .home {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 50px;
+    background-color: white;
+    flex-wrap: wrap;
+}
+
+.left {
+    display: flex;
+    align-items: center;
+    gap: 150px;
+    flex-wrap: wrap;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo img {
+    width: 100px;
+    height: auto;
+}
+
+.brand {
+    display: flex;
+    flex-direction: column;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.brand .green {
+    color: #0c557e;
+    font-size: 50px;
+}
+
+
+.navsl {
+    display: flex;
+    gap: 50px;
+    flex-wrap: wrap;
+}
+
+.navsl a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    transition: color 0.3s;
+    font-size: 18px;
+    transition: 0.3s ease-in-out;
+}
+
+.navsl a:hover {
+    color: #333;
+    transform: scale(1.1);
+}
+
+.book {
+    background-color: #0c557e;
+    color: white;
+    padding: 10px 18px;
+    border-radius: 20px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.book:hover {
+    background-color: #333;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .home {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+        padding: 20px 30px;
+    }
+
+    .left {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+    }
+
+    .navsl {
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    .book {
+        align-self: flex-start;
+        margin-top: 10px;
+    }
+}
+
+@media (max-width: 768px) {
+    .logo img {
+        width: 80px;
+    }
+
+    .brand .green {
+        font-size: 35px;
+    }
+
+    .navsl {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .book {
+        width: 100%;
+        justify-content: center;
+    }
+}
+  </style>
+</head>
+<body>
+    <header class="home">
+        <div class="left">
+          <div class="logo">
+            <img src="sl/sl.png" alt="sl LOGO">
+            <div class="brand">
+              <span class="green">SL</span>
+              <span>RENTALS</span>
+            </div>
+          </div>
+      
+          <nav class="navsl">
+            <a href="index.html">HOME</a>
+            <a href="properties.html">PROPERTIES</a>
+            <a href="demo.html">DEMOS</a>
+            <a href="about-us.html">ABOUT</a>
+            <a href="our-team.html">TEAM</a>
+          </nav>
+        </div>
+      
+        <div class="book" onclick="window.location.href='booking.html'">
+          <i class="fas fa-phone"></i> BOOK
+        </div>          
+      </header>
+
+  <h2>Featured Property Demos</h2>
+  <div class="filters">
+    <button onclick="filterCards('all')">All</button>
+    <button onclick="filterCards('apartment')">Apartments</button>
+    <button onclick="filterCards('house')">Houses</button>
+    <button onclick="filterCards('resort')">Resorts</button>
+  </div>
+
+  <div class="card-grid">
+    <div class="card" data-type="apartment">
+      <img src="sl/image 1.jpg" alt="Apartment">
+      <div class="card-content">
+        <p>Spacious and ideal for families, with modern design and multiple bedrooms.</p>
+      </div>
+    </div>
+
+    <div class="card" data-type="apartment">
+      <img src="sl/image 2.jpg" alt="House">
+      <div class="card-content">
+        <p>Perfect for weekend getaways with your loved ones.</p>
+      </div>
+    </div>
+
+    <div class="card" data-type="apartment">
+      <img src="sl/image 3.jpg" alt="Resort">
+      <div class="card-content">
+        <p> Simple and accessible layout with a homey feel.</p>
+      </div>
+    </div>
+
+    <div class="card" data-type="house">
+      <img src="sl/image 4.jpg" alt="Studio">
+      <div class="card-content">
+        <p>A large and elegant home for bigger groups or gatherings.</p>
+      </div>
+    </div>
+
+    <div class="card" data-type="resort">
+        <img src="sl/m1.jpg" alt="Studio">
+        <div class="card-content">
+          <p> A flexible space suitable for both business and personal stays.</p>
+        </div>
+      </div>
+
+      <div class="card" data-type="apartment">
+        <img src="sl/m2.jpg" alt="Studio">
+        <div class="card-content">
+          <p>Balanced comfort and convenience in a quiet location.</p>
+        </div>
+      </div>
+
+      <div class="card" data-type="resort">
+        <img src="sl/m3.jpg" alt="Studio">
+        <div class="card-content">
+          <p>Relaxed provincial charm with space for all.</p>
+        </div>
+      </div>
+
+      <div class="card" data-type="resort">
+        <img src="sl/mag1.jpg" alt="Studio">
+        <div class="card-content">
+          <p>Stylish and perfect for group fun.</p>
+        </div>
+      </div>
+
+      <div class="card" data-type="apartment">
+        <img src="sl/c1.jpg" alt="Studio">
+        <div class="card-content">
+          <p>Compact and private, great for solo renters or students.</p>
+        </div>
+      </div>
+
+  <div class="card" data-type="apartment">
+    <img src="sl/tab1.jpg" alt="Studio">
+    <div class="card-content">
+      <p>Bright, breezy, and elevated for added privacy and views.</p>
+    </div>
+  </div>
+
+<div class="card" data-type="house">
+    <img src="sl/n1.jpg" alt="Studio">
+    <div class="card-content">
+      <p> Spacious and ideal for big families.</p>
+    </div>
+  </div>
+</div>
+
+  <script>
+    function filterCards(type) {
+      const cards = document.querySelectorAll('.card');
+      cards.forEach(card => {
+        const cardType = card.getAttribute('data-type');
+        if (type === 'all' || type === cardType) {
+          card.style.display = 'block';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+  </script>
+</body>
+</html>
